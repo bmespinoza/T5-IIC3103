@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 EPISODES_URL = 'https://rickandmortyapi.com/api/episode'
 const fetch = require('node-fetch');
-GRAPH_QL= 'https://rickandmortyapi.com/graphql/'
+GRAPH_QL= 'http://integracion-rick-morty-api.herokuapp.com/graphql'
 
 const Episodios = async () => {
   var resultados = [];

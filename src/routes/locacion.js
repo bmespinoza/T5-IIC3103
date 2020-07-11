@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 LOCATION_URL = 'https://rickandmortyapi.com/api/location'
-GRAPH_QL = 'https://rickandmortyapi.com/graphql/'
+GRAPH_QL = 'http://integracion-rick-morty-api.herokuapp.com/graphql'
 const fetch = require('node-fetch');
 
 

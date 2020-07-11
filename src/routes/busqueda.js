@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
-GRAPH_QL= 'https://rickandmortyapi.com/graphql/'
+GRAPH_QL= 'http://integracion-rick-morty-api.herokuapp.com/graphql'
 
 
 async function Search(busq){
