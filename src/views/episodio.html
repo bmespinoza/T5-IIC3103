@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wikia</title>
+  <%- include ('partials/head.html') %>
+</head>
+<body>
+  <form action="busqueda">
+    <input type="text" name="busco" placeholder="Escribe algo..."/>
+    <input type="submit" value="Buscar"/>
+  </form>
+  <h1> Episodio</h1>
+
+  <p>Codigo episodio:<%= resii.episode %></p>
+  <p>Nombre: <%= resii.name %></p>
+  <p>Fecha: <%= resii.air_date %></p>
+  <p> Personajes: </p>
+  <% var i=0; %>
+  <% while(i < resii.characters.length){ %>
+    <form action="personaje">
+      <input type="hidden" value="<%= resii.characters[i].name %>" name="pers"/>
+      <input type="submit" value="<%= resii.characters[i].name%>"/>
+    </form>
+    <% i++; %>
+
+
+  <%} %>
+
+
+
+
+
+  <%- include ('partials/footer.html')%>
+</body>
+</html>

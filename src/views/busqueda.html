@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wikia</title>
+  <%- include ('partials/head.html') %>
+</head>
+<body>
+  <h1> Resultados de la busqueda</h1>
+
+  <h4> Episodios</h4>
+  <% var i=0; %>
+  <% if(resii[0].length==0){%>
+    <p> No hay episodios con ese nombre.</p>
+  <%}%>
+  <% while(i < resii[0].length){ %>
+    <form action="episodio">
+      <input type="hidden" value="<%= resii[0][i].episode %>" name="epix"/>
+      <input type="submit" value="<%= resii[0][i].name%>"/>
+    </form>
+    <% i++; %>
+  <%}%>
+
+  <h4> Personajes</h4>
+  <% var j=0; %>
+  <% if(resii[1].length==0){%>
+    <p> No hay personajes con ese nombre.</p>
+  <%}%>
+  <% while(j < resii[1].length){ %>
+    <form action="personaje">
+      <input type="hidden" value="<%= resii[1][j].name %>" name="pers"/>
+      <input type="submit" value="<%= resii[1][j].name%>"/>
+    </form>
+    <% j++; %>
+  <%}%>
+
+  <h4> Lugares</h4>
+  <% var k=0; %>
+  <% if(resii[2].length==0){%>
+    <p> No hay lugares con ese nombre.</p>
+  <%}%>
+  <% while(k < resii[2].length){ %>
+    <form action="locacion">
+      <input type="hidden" value="<%= resii[2][k].name %>" name="loc"/>
+      <input type="submit" value="<%= resii[2][k].name%>"/>
+    </form>
+    <% k++; %>
+  <%}%>
+
+
+
+
+  <%- include ('partials/footer.html')%>
+</body>
+</html>

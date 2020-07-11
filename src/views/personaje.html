@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wikia</title>
+  <%- include ('partials/head.html') %>
+</head>
+<body>
+  <form action="busqueda">
+    <input type="text" name="busco" placeholder="Escribe algo..."/>
+    <input type="submit" value="Buscar"/>
+  </form>
+  <h1> Personaje</h1>
+
+  <img src="<%= resii.image%>" alt="personaje logo" style="width:300px">
+  <p>Nombre: <%= resii.name %></p>
+  <p>Estado: <%= resii.status %></p>
+  <p>Especie: <%= resii.species %></p>
+  <p>Tipo: <%= resii.type %></p>
+  <p>Genero: <%= resii.gender %></p>
+  <p>Lugar de origen: </p>
+  <form action="locacion">
+    <input type="hidden" value="<%= resii.origin.name %>" name="loc"/>
+    <input type="submit" value="<%= resii.origin.name%>"/>
+  </form>
+  <p> Locacion: </p>
+  <form action="locacion">
+    <input type="hidden" value="<%= resii.location.name %>" name="loc"/>
+    <input type="submit" value="<%= resii.location.name%>"/>
+  </form>
+  <p> Episodios: </p>
+  <% var i=0; %>
+  <% while(i < resii.episode.length){ %>
+    <form action="episodio">
+      <input type="hidden" value="<%= resii.episode[i].episode %>" name="epix"/>
+      <input type="submit" value="<%= resii.episode[i].name%>"/>
+    </form>
+    <% i++; %>
+  <%} %>
+
+
+
+
+  <%- include ('partials/footer.html')%>
+</body>
+</html>

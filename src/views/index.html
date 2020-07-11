@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wikia</title>
+  <%- include ('partials/head.html') %>
+</head>
+<body>
+  <h1> Home</h1>
+
+  <div class="container">
+    <header class="row">
+      <img src="/img/rm.png" alt="rick-morty logo" style="width:300px">
+    </header>
+  </div>
+
+  <form action="busqueda">
+    <input type="text" name="busco" placeholder="Escribe algo..."/>
+    <input type="submit" value="Buscar"/>
+  </form>
+
+
+  <% resii.forEach(elm => { %>
+
+    <p>Codigo episodio: <%= elm.episode %></p>
+    <p>Nombre episodio: <%= elm.name %></p>
+    <p>Fecha: <%= elm.air_date %></p>
+    <form action="episodio">
+      <input type="hidden" value="<%= elm.episode %>" name="epix"/>
+      <input type="submit" value="Ver mas"/>
+    </form>
+
+  <% }) %>
+
+
+
+
+
+
+  <%- include ('partials/footer.html')%>
+</body>
+</html>

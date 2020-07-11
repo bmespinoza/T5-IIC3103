@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wikia</title>
+  <%- include ('partials/head.html') %>
+</head>
+<body>
+  <form action="busqueda">
+    <input type="text" name="busco" placeholder="Escribe algo..."/>
+    <input type="submit" value="Buscar"/>
+  </form>
+  <h1> Lugar</h1>
+
+  <p>Nombre: <%= resii.name %></p>
+  <p>Tipo: <%= resii.type %></p>
+  <p>Dimension: <%= resii.dimension %></p>
+  <p> Residentes: </p>
+  <% var i=0; %>
+  <% while(i < resii.residents.length){ %>
+    <form action="personaje">
+      <input type="hidden" value="<%= resii.residents[i].name %>" name="pers"/>
+      <input type="submit" value="<%= resii.residents[i].name%>"/>
+    </form>
+    <% i++; %>
+  <%} %>
+
+
+
+
+  <%- include ('partials/footer.html')%>
+</body>
+</html>
